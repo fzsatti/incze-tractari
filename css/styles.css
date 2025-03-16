@@ -305,6 +305,7 @@ figure {
 }
 
 img,
+video,
 svg {
   vertical-align: middle;
 }
@@ -600,7 +601,10 @@ progress {
 
 .img-fluid {
   max-width: 100%;
+  width: 100%;
+  max-height: 250px;
   height: auto;
+  object-fit:contain;
 }
 
 .img-thumbnail {
