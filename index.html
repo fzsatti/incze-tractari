@@ -20,15 +20,6 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17199031590"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'AW-17199031590');
-        </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -170,7 +161,7 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start"></div>
+                    <div class="col-lg-4 text-lg-start"><a href="#" id="cookie-settings-link" class="cookie-settings-link">Setări cookie-uri</a></div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="tel:+40758676687" aria-label="Telefon"><i class="fa fa-phone"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/inczetractariauto" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -189,5 +180,15 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <div id="cookie-banner" class="cookie-banner" style="display: none;">
+            <div class="cookie-banner-content">
+                <span class="cookie-banner-text">Acest site folosește cookie-uri pentru analiză și publicitate Google.</span>
+                <div class="cookie-banner-buttons">
+                    <button id="cookie-accept" class="btn btn-primary btn-sm">Accept</button>
+                    <button id="cookie-refuz" class="btn btn-dark btn-sm">Refuz</button>
+                </div>
+            </div>
+        </div>
+        <script src="js/cookie-consent.js"></script>
     </body>
 </html>

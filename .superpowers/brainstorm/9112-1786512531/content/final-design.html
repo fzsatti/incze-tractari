@@ -1,0 +1,100 @@
+<h2>Cookie Consent — Final Design Proposal</h2>
+<p class="subtitle">Based on your selections: Fixed bottom bar + Accept/Refuz + Gate tracking + localStorage + Footer re-open link</p>
+
+<div class="section">
+  <h3>What will be built</h3>
+  
+  <div class="mockup" style="max-width: 800px;">
+    <div class="mockup-header">incze-tractari — Cookie Consent Banner</div>
+    <div class="mockup-body" style="min-height: 450px; background: #f8f9fa; position: relative; font-family: sans-serif;">
+      
+      <div class="mock-nav" style="margin-bottom: 12px;">INCZE Tractări ⚡ | Servicii | Galerie | Contact</div>
+      
+      <div style="background: #333; color: white; padding: 30px 20px; text-align: center;">
+        <h3 style="color: #ffc800; font-family: sans-serif;">TRACTĂRI AUTO</h3>
+        <p style="margin:0">Servicii de tractare auto, non-stop</p>
+      </div>
+      <div class="placeholder" style="margin: 16px;">...</div>
+      <div class="placeholder" style="margin: 16px;">...</div>
+      <div class="placeholder" style="margin: 16px;">...</div>
+      
+      <!-- Footer -->
+      <div style="background: #212529; color: white; padding: 16px 20px 80px 20px; text-align: center; font-size: 13px;">
+        Copyright &copy; INCZE Tractări 2024 &nbsp;|&nbsp; 
+        <span style="color: #ffc800; text-decoration: underline; cursor: pointer;">Politica de confidențialitate</span> &nbsp;|&nbsp;
+        <span style="color: #ffc800; text-decoration: underline; cursor: pointer;">Setări cookie-uri</span>
+      </div>
+
+      <!-- BANNER -->
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: #212529; color: #ccc; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 13px; border-top: 2px solid #ffc800; z-index: 1050; box-shadow: 0 -2px 12px rgba(0,0,0,0.3);">
+        <span style="flex: 1">
+          🍪 Acest site folosește cookie-uri pentru analiză și publicitate Google. 
+          <span style="color: #ffc800; text-decoration: underline; cursor: pointer;">Politica de confidențialitate</span>
+        </span>
+        <div style="display: flex; gap: 8px; flex-shrink: 0;">
+          <button style="background: #ffc800; color: #212529; border: none; border-radius: 4px; padding: 6px 16px; font-size: 12px; cursor: pointer; font-weight: 600;">Accept</button>
+          <button style="background: #555; color: white; border: none; border-radius: 4px; padding: 6px 16px; font-size: 12px; cursor: pointer;">Refuz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Files to create/modify</h3>
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+    <tr style="border-bottom: 1px solid #ddd;">
+      <th style="text-align: left; padding: 8px; background: #f0f0f0;">File</th>
+      <th style="text-align: left; padding: 8px; background: #f0f0f0;">Action</th>
+      <th style="text-align: left; padding: 8px; background: #f0f0f0;">Description</th>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px;"><code>index.html</code></td>
+      <td style="padding: 8px;"><span class="label">MODIFY</span></td>
+      <td style="padding: 8px;">Add banner HTML before closing &lt;/body&gt;. Add footer link. Add JS include.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px;"><code>js/cookie-consent.js</code></td>
+      <td style="padding: 8px;"><span class="label">NEW</span></td>
+      <td style="padding: 8px;">Banner logic: show/hide, localStorage, gtag enable/disable, re-open from footer</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px;"><code>css/styles.css</code></td>
+      <td style="padding: 8px;"><span class="label">MODIFY</span></td>
+      <td style="padding: 8px;">Add ~30 lines of banner styling at end of file</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;"><code>politica-confidentialitate.html</code></td>
+      <td style="padding: 8px;"><span class="label">NEW (optional)</span></td>
+      <td style="padding: 8px;">Privacy policy page in Romanian</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section">
+  <h3>Behavior summary</h3>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>What the banner does</h4>
+      <ul>
+        <li>Shows on first visit (no localStorage key found)</li>
+        <li>"Accept" → saves preference, loads gtag.js, hides banner</li>
+        <li>"Refuz" → saves preference, blocks gtag.js, hides banner</li>
+        <li>"Setări cookie-uri" footer link → reopens banner to change choice</li>
+        <li>Choice persists across visits via localStorage</li>
+        <li>All text in Romanian</li>
+        <li>Styled to match site: dark bg (#212529), gold accent (#ffc800)</li>
+        <li>Website still works fully without cookies</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>What it does NOT include</h4>
+      <ul>
+        <li>No cookie categories/preferences (simple binary choice)</li>
+        <li>No third-party consent management platform</li>
+        <li>No auto-blocking of other scripts (only gtag.js)</li>
+        <li>No privacy policy page (can be added separately)</li>
+      </ul>
+    </div>
+  </div>
+</div>

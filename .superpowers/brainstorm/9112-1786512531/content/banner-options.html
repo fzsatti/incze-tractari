@@ -1,0 +1,49 @@
+<h2>Cookie Consent Banner — Design Options</h2>
+<p class="subtitle">Site uses Bootstrap 5.2.3, plain HTML/CSS. Romanian-language site (GDPR applies). Currently Google Ads tracking loads without consent.</p>
+
+<div class="section">
+  <h3>Current Site (no consent)</h3>
+  <p class="subtitle">Google gtag.js fires on every page load — non-compliant under GDPR</p>
+  <div class="mockup">
+    <div class="mockup-header">incze-tractari (index.html)</div>
+    <div class="mockup-body" style="min-height: 300px; position: relative; font-family: Georgia, serif;">
+      <div class="mock-nav">INCZE Tractări ⚡ | Servicii | Galerie | Contact</div>
+      <div style="background: #333; color: white; padding: 40px 20px; text-align: center;">
+        <h3 style="color: #ffc800; font-family: sans-serif;">TRACTĂRI AUTO</h3>
+        <p>Servicii de tractare auto, non-stop</p>
+      </div>
+      <div class="placeholder" style="margin: 20px;">Secțiune Servicii...</div>
+      <div class="placeholder" style="margin: 20px;">Secțiune Galerie...</div>
+      <div class="placeholder" style="margin: 20px;">Secțiune Contact...</div>
+      <div style="background: #212529; color: white; padding: 20px; text-align: center; font-size: 14px;">
+        Footer — Copyright &copy; INCZE Tractări
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Which banner style fits best?</h3>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Fixed Bottom Bar</h3>
+      <p>Compact, non-blocking bar fixed to the bottom. Shows message + Accept/Reject buttons. Matches the dark footer style. Least intrusive, most common pattern.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Centered Modal Overlay</h3>
+      <p>Blocks interaction until choice is made. Full GDPR compliance (explicit consent before interaction). More disruptive but legally safest. Matches Bootstrap modal style.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Slide-in Toast (Corner)</h3>
+      <p>Small popup in bottom-right corner. Minimal, but may not meet GDPR requirements for explicit consent. Works well for non-EU visitors.</p>
+    </div>
+  </div>
+</div>

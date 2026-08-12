@@ -1,0 +1,68 @@
+<h2>Behavior — What should happen?</h2>
+<p class="subtitle">Beyond the UI, how should the consent banner actually function?</p>
+
+<div class="section">
+  <h3>1. Block Google tracking until consent?</h3>
+  <p class="subtitle">Currently gtag.js loads on every page visit. Under GDPR, tracking scripts must not fire before consent.</p>
+  
+  <div class="options">
+    <div class="option" data-choice="block-yes" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Yes — Gate tracking behind consent</h3>
+        <p>Google Analytics/Ads only loads after user clicks "Accept". On "Refuz", it never loads. This is the GDPR-compliant approach.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="block-no" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>No — Just show the banner</h3>
+        <p>Banner is purely cosmetic — tracking loads regardless. Not GDPR-compliant but simpler. The banner just informs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2. Remember the user's choice?</h3>
+  <p class="subtitle">Without persistence, the banner shows on every page visit. With localStorage, it only shows once.</p>
+
+  <div class="options">
+    <div class="option" data-choice="remember-yes" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Yes — Remember with localStorage</h3>
+        <p>Saves choice to localStorage. Banner hides permanently after first interaction. User can still change preference via a "cookie settings" link in footer.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="remember-no" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>No — Show on every visit</h3>
+        <p>Banner appears every time the page loads. More annoying but ensures fresh consent each visit.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>3. Re-open settings link?</h3>
+  <p class="subtitle">Once accepted/refused, should there be a way to change the preference?</p>
+
+  <div class="options">
+    <div class="option" data-choice="reopen-footer" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Footer link — "Setări cookie-uri"</h3>
+        <p>Add a small link in the footer to reopen the banner. Standard practice, users can withdraw consent anytime.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="reopen-no" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>None — One-time choice only</h3>
+        <p>Simpler. User clears browser data to reset. Less ideal for GDPR but acceptable for a small business site.</p>
+      </div>
+    </div>
+  </div>
+</div>
